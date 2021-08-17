@@ -47,7 +47,29 @@
 
   //Case 3
   echo"<br>Case 3 : <br><br>";
-  $odd = 7;
-  echo "odd = $odd<br>"
+  $odd = 15;
+  echo "Odd = $odd<br>";
+  $result = cariodd($odd);
+  $panjangresult = count($result);
+  echo "Result = $panjangresult---->[";
+  for($i=0;$i<=$panjangresult-1;$i++){
+    if($i==$panjangresult-1){
+      echo "$result[$i]]";
+    } else {
+      echo "$result[$i],";
+    }
+  }
+  function cariodd($odd){
+    $array3 = range(1,$odd);
+    $panjang3 = count($array3)-1;
+    $indexresult = 0;
+    for($i=0;$i<=$panjang3;$i++){
+      if($array3[$i]%2!=0&&$array3[$i]!=$odd){
+        $result[$indexresult]=$array3[$i];
+        $indexresult++;
+      }
+    }
+    return $result;
+  }
 
 ?>

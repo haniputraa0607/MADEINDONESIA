@@ -80,7 +80,7 @@
 		
 
 		<div class="container">
-			<h1>Challenge 2</h1>
+			<h1>Challenage 2</h1>
 			<b><blockquote>!! Instructions:</blockquote></b>
 			<ul>
 				<li>Change the HTML using given array</li>

@@ -30,6 +30,8 @@
   }
   
   
+  //Case 2
+  echo"Case 2 : <br><br>";
 
-  
+
 ?>

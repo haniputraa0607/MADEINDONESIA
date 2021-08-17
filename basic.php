@@ -8,9 +8,18 @@
     //hilangkan titik
     $pecahdulu = explode('.',$angka);
     $tanpatitik = implode($pecahdulu);
-    //pecah integer
+    //pecah 
     $pecah = str_split($tanpatitik);
-    
+    $panjangarray = count($pecah)-1;
+    $belakang = 10;
+    for($i=0;$i<=$panjangarray;$i++){
+      if($i==$panjangarray){
+        $baru[$panjangarray]=$pecah[$panjangarray];
+        echo $baru[$panjangarray];
+      } else {
+        echo "yea <br>";
+      }
+    }
 
   } 
 

@@ -1,11 +1,11 @@
 $('document').ready(function () {
-  $('#email').on('focus', function () {
-    $('#email').removeClass('error');
+  $('#username').on('focus', function () {
+    $('#username').removeClass('error');
   });
 
-  $('#email').on('blur', function () {
-    if ($('#email').val() == '') {
-      $('#email').addClass('error');
+  $('#username').on('blur', function () {
+    if ($('#username').val() == '') {
+      $('#username').addClass('error');
     }
   });
 
@@ -22,7 +22,7 @@ $('document').ready(function () {
   $('#login-form').on('submit', function (e) {
     e.preventDefault();
     $('#err-msg').html('');
-    var err = false;
+    let err = false;
     if ($('#email').val() == '') {
       $('#email').addClass('error');
       err = true;
@@ -35,6 +35,7 @@ $('document').ready(function () {
       return false;
     }
 
+    let g = 4;
     $.ajax({
       type: 'POST',
       url: 'login.php',
@@ -42,12 +43,12 @@ $('document').ready(function () {
       success: function (status) {
         if (status == true) {
           $('#login').val('Signing in...');
-          setTimeout('window.location.href = "dashboard.php";', 3000);
+          setTimeout('window.location.href = "home.php";', 3000);
         } else {
           $('#err-msg').html(
             '<div class="alert alert-danger text-center">Invalid email or password!</div>'
           );
-          $('#email').val('');
+          $('#username').val('');
           $('#password').val('');
         }
       },

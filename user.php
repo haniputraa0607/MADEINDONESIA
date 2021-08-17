@@ -8,13 +8,14 @@
       }
       
       function login($user, $pass)
-      {
-          $result = $this->db->query("SELECT * FROM user WHERE username = '" . $user. "' and password = '" . $pass . "'");
+      {   
+          $query = "SELECT * FROM user WHERE username like '$user' AND password like '$pass'";
+          $result = mysqli_query($this->db,$query);
           if ($result->num_rows > 0)
           {
               @session_start();
               $row = $result->fetch_assoc();
-              $_SESSION['user_id'] = $row['id'];
+              $_SESSION['user_id'] = $row['id_user'];
               $_SESSION['user_name'] = $row['username'];
               return true;
           }

@@ -9,5 +9,5 @@
     die('Error ' . $this->db->connect_error);
   }
   include_once('user.php');
-  $con = new User($a);
+  $con = new User($db);
 ?>

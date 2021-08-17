@@ -14,6 +14,7 @@
   <title>Home</title>
 </head>
 <body>
-  <h1>Masuk</h1>
+  <h3>Hallo <?= $_SESSION['user_name']; ?></h3>
+  <a href="logout.php">Logout</a>
 </body>
 </html>

@@ -5,11 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login MadeIndonesia</title>
+    <style>
+      .error {
+        background-color: #F2DEDE;
+      }
+    </style>
   </head>
   <body>
     <h3>LOGIN</h3>
     <form action="" method="post" id="login-form">
       <table>
+        <div id="err-msg" name="err-msg"></div>
         <tr>
           <td>Username</td>
           <td>:</td>
@@ -23,7 +29,7 @@
         <tr>
           <td></td>
           <td></td>
-          <td><input type="submit" name="login" value="Login" /></td>
+          <td><input type="submit" name="login" value="Sign in" id="login" /></td>
         </tr>
       </table>
     </form>

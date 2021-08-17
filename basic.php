@@ -45,5 +45,9 @@
   }
   
 
+  //Case 3
+  echo"<br>Case 3 : <br><br>";
+  $odd = 7;
+  echo "odd = $odd<br>"
 
 ?>

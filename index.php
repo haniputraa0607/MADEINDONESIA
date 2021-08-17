@@ -61,26 +61,35 @@
 		?>
 
 		<h2>Expected output: </h2>
+		
 
 		<nav class="mb-3">
 			<div class="nav nav-tabs" id="nav-tab" role="tablist">
-				<a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Home</a>
-				<a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">About</a>
-				<a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</a>
+				<?php 
+					$panjangmenu = count($menu)-1;
+					for($i=0;$i<=$panjangmenu;$i++){
+						$isimenu = $menu[$i]; ?>
+						<a class="nav-item nav-link" id="nav-<?=$isimenu["tabName"]?>-tab" data-toggle="tab" href="#nav-<?=$isimenu["tabName"]?>" role="tab" aria-controls="nav-<?=$isimenu["tabName"]?>" aria-selected="false"><?= $isimenu["tabName"]; ?></a>
+					<?php }
+				?>
 			</div>
 		</nav>
 
 		<div class="tab-content mb-5" id="nav-tabContent">
-			<div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">This is content for Home-tab. Please display me in the correct tab menu.</div>
-			<div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">This is content for ABOUT. Please display me in the correct tab menu.</div>
-			<div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">This is content for CONTACT. Please display me in the correct tab menu.</div>
+			<?php for($i=0;$i<=$panjangmenu;$i++){ 
+					if($i==0){ ?>
+						<div class="tab-pane fade show active" id="nav-<?=$menu[$i]["tabName"]?>" role="tabpanel" aria-labelledby="nav-<?=$menu[$i]["tabName"]?>-tab"><?= $menu[$i]["content"]; ?></div>
+					<?php }else { ?>
+						<div class="tab-pane fade" id="nav-<?=$menu[$i]["tabName"]?>" role="tabpanel" aria-labelledby="nav-<?=$menu[$i]["tabName"]?>-tab"><?= $menu[$i]["content"]; ?></div>
+					<?php }
+			} ?>	
 		</div>
 		</div><!-- .container -->
 		
 		
 
 		<div class="container">
-			<h1>Challenage 2</h1>
+			<h1>Challenge 2</h1>
 			<b><blockquote>!! Instructions:</blockquote></b>
 			<ul>
 				<li>Change the HTML using given array</li>
@@ -96,100 +105,58 @@
 				echo "<pre>";
 				print_r($genre);
 				echo "</pre>";
+				
 			?>
 
 			<h2>Expected output: </h2>
 
 			<section id="bathroom-special-single">
+			<?php for($i=0;$i<=3;$i++) {?>
 				<div class="row gallery mb-5">
-					<div class="col-md-8 col-wrapper">
+         <?php 
+          if($i==0){
+            $x =0;
+            $panjang = 1;
+          } else if($i==1){
+            $x=2;
+            $panjang = 4;
+          } else if($i==2){
+            $panjang = 6;
+            $x=5;
+          } else{
+            $x=7;
+            $panjang = 8;
+          }
+         ?> 
+        <?php for($j=$x;$j<=$panjang;$j++){ ?>
+          <?php 
+            if($i==0){
+              if($j<1){
+                $nilai = 8;
+              } else{
+                $nilai = 4;
+              }
+            } else if($i==1){
+              $nilai = 4;
+            } else if($i==2){
+              if($j<6){
+                $nilai = 8;
+              } else{
+                $nilai = 4;
+              }
+            }      
+          ?>
+          <div class="col-md-<?=$nilai;?> col-wrapper">
 						<div class="card">
 							<div class="card-body">
-								<h5 class="card-title">Horor</h5>
+								<h5 class="card-title"><?= ucwords($genre[$x]); ?></h5>
 								<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
 							</div>
 						</div>
 					</div>
-
-					<div class="col-md-4 col-wrapper">
-						<div class="card">
-							<div class="card-body">
-								<h5 class="card-title">Drama</h5>
-								<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-							</div>
-						</div>
-					</div>
-				</div><!-- .row gallery -->
-
-				<div class="row gallery mb-5">
-					<div class="col-md-4 col-wrapper">
-						<div class="card">
-							<div class="card-body">
-								<h5 class="card-title">Action</h5>
-								<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-md-4 col-wrapper">
-						<div class="card">
-							<div class="card-body">
-							<h5 class="card-title">Comedy</h5>
-							<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-md-4 col-wrapper">
-						<div class="card">
-							<div class="card-body">
-							<h5 class="card-title">Romance</h5>
-							<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-							</div>
-						</div>
-					</div>
-				</div><!--.row gallery-->
-
-				<div class="row gallery mb-5">
-					<div class="col-md-8 col-wrapper">
-						<div class="card">
-							<div class="card-body">
-								<h5 class="card-title">Family</h5>
-								<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-md-4 col-wrapper">
-						<div class="card">
-							<div class="card-body">
-								<h5 class="card-title">Fantasy</h5>
-								<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-							</div>
-						</div>
-					</div>
-				</div><!-- .row gallery -->
-
-				<div class="row gallery mb-5">
-					<div class="col-md-4 col-wrapper">
-						<div class="card">
-							<div class="card-body">
-								<h5 class="card-title">Thriller</h5>
-								<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-md-4 col-wrapper">
-						<div class="card">
-							<div class="card-body">
-							<h5 class="card-title">Mystery</h5>
-							<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-							</div>
-						</div>
-					</div>
-				</div><!--.row gallery-->
-				
+        <?php $x++;} ?>
+        </div>	
+      <?php } ?>
 			</section>
 		</div>
                   

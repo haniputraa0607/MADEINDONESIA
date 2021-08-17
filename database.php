@@ -8,7 +8,6 @@
   if($db->connect_errno){
     die('Error ' . $this->db->connect_error);
   }
-  
-  // include_once('UserClass.php');
-  // $con = new UserClass($db);
+  include_once('user.php');
+  $con = new User($a);
 ?>

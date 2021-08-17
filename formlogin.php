@@ -8,17 +8,17 @@
   </head>
   <body>
     <h3>LOGIN</h3>
-    <form action="" method="post">
+    <form action="" method="post" id="login-form">
       <table>
         <tr>
           <td>Username</td>
           <td>:</td>
-          <td><input type="text" name="username" /></td>
+          <td><input type="text" name="username" id="username" /></td>
         </tr>
         <tr>
           <td>Password</td>
           <td>:</td>
-          <td><input type="password" name="password" /></td>
+          <td><input type="password" name="password" id="password" /></td>
         </tr>
         <tr>
           <td></td>

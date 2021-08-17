@@ -8,8 +8,10 @@
     //hilangkan titik
     $pecahdulu = explode('.',$angka);
     $tanpatitik = implode($pecahdulu);
-    $intstring = intval($tanpatitik);
-    var_dump($intstring);
+    //pecah integer
+    $pecah = str_split($tanpatitik);
+    
+
   } 
 
 

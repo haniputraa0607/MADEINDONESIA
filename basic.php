@@ -5,9 +5,11 @@
   echo "String = $angka <br>";
   $array = allgidit($angka);
   function allgidit($angka){
+    //hilangkan titik
     $pecahdulu = explode('.',$angka);
     $tanpatitik = implode($pecahdulu);
-    var_dump($tanpatitik);
+    $intstring = intval($tanpatitik);
+    var_dump($intstring);
   } 
 
 

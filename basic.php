@@ -31,7 +31,19 @@
   
   
   //Case 2
-  echo"Case 2 : <br><br>";
+  echo"<br>Case 2 : <br><br>";
+  $arrayangka = range(1,9);
+  segitiga($arrayangka);
+  function segitiga($angka){
+    $panjang = count($angka)-1;
+    for($i=0;$i<=$panjang;$i++){
+      for($j=$i;$j<=$panjang;$j++){
+        echo "$angka[$j] ";
+      }
+      echo "<br>";
+    }
+  }
+  
 
 
 ?>
